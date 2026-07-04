@@ -1,4 +1,5 @@
 
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
 import Counter from './components/Counter'
 import DrinkList from './components/DrinkList'
@@ -6,6 +7,8 @@ import Greet from './components/Greet'
 import InputValueState from './components/InputValueState'
 import Player from './components/Player'
 import Player2 from './components/Player2'
+import Todos from './placeholder/Todos'
+import TodoDetail from './placeholder/TodoDetail'
 
 function App() {
   //객체 정의
@@ -21,6 +24,13 @@ function App() {
   return (
     <>
       <section className="app">
+        <BrowserRouter>
+          <Routes>
+            <Route path='/' element={<Todos />} />
+            <Route path='/todos/:id' element={<TodoDetail />} />
+          </Routes>
+        </BrowserRouter>
+
         {/* <Greet name="타입스크립트" /> */}
         {/* <Player 
           player={playerObj} 
@@ -32,7 +42,7 @@ function App() {
         /> */}
         {/* <Counter /> */}
         {/* <InputValueState /> */}
-        <DrinkList />
+        {/* <DrinkList /> */}
       </section>
     </>
   )
