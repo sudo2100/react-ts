@@ -1,4 +1,5 @@
 
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css'
 import Drink from './components/Drink';
 import Greet from './components/Greet'
@@ -8,6 +9,8 @@ import Box from './props/Box';
 import Card from './props/Card';
 import Memo from './stroage/Memo';
 import Todos from './stroage/Todos';
+import Posts from './posts/Posts';
+import PostDetail from './posts/PostDetail';
 
 function App() {
 
@@ -19,8 +22,16 @@ function App() {
   return (
     <>
       <section className="app">
+        <BrowserRouter>
+          <Routes>
+            <Route path='/' element={<Posts />} />
+            <Route path='/posts/:id' element={<PostDetail />} />
+          </Routes>
+        </BrowserRouter>
+
+
         {/* <Memo /> */}
-        <Todos />
+        {/* <Todos /> */}
 
         {/* <Card title="공지사항">
           <p>내일은 TypeScript 시험이 있습니다.</p>
