@@ -6,6 +6,8 @@ import Greet2 from './components/Greet2'
 import InputValue from './components/InputValue';
 import Box from './props/Box';
 import Card from './props/Card';
+import Memo from './stroage/Memo';
+import Todos from './stroage/Todos';
 
 function App() {
 
@@ -17,7 +19,10 @@ function App() {
   return (
     <>
       <section className="app">
-        <Card title="공지사항">
+        {/* <Memo /> */}
+        <Todos />
+
+        {/* <Card title="공지사항">
           <p>내일은 TypeScript 시험이 있습니다.</p>
         </Card>
 
@@ -26,8 +31,7 @@ function App() {
             <li>Props 타입 복습</li>
             <li>children 예제 실습</li>
           </ul>
-        </Card>
-
+        </Card> */}
         {/* <InputValue /> */}
         {/* <Drink /> */}
         {/* 태그 사이의 있는 내용이 Box의 children으로 전달됨 */}
