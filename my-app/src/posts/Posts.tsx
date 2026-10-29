@@ -31,6 +31,7 @@ const Posts = () => {
     return(
         <div>
             <h2>게시글 목록</h2>
+            <h4><Link to="/posts/add">글쓰기</Link></h4>
             <ul>
                 {posts.map(post => (
                     <li key={post.id}>

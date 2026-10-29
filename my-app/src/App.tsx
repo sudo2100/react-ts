@@ -11,6 +11,7 @@ import Memo from './stroage/Memo';
 import Todos from './stroage/Todos';
 import Posts from './posts/Posts';
 import PostDetail from './posts/PostDetail';
+import AddPost from './posts/AddPost';
 
 function App() {
 
@@ -26,9 +27,9 @@ function App() {
           <Routes>
             <Route path='/' element={<Posts />} />
             <Route path='/posts/:id' element={<PostDetail />} />
+            <Route path='/posts/add' element={<AddPost />} />
           </Routes>
         </BrowserRouter>
-
 
         {/* <Memo /> */}
         {/* <Todos /> */}
