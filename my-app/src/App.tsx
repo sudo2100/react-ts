@@ -15,6 +15,7 @@ import AddPost from './posts/AddPost';
 import Bank from './reducer/Bank';
 import ProductList from './products/ProductList';
 import Header from './layouts/Header';
+import Cart from './products/Cart';
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
         <Header />
           <Routes>
             <Route path='/' element={<ProductList />} />
+            <Route path='/cart' element={<Cart />} />
           </Routes>
         </BrowserRouter>
 

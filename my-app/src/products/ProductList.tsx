@@ -1,10 +1,5 @@
 
-// Product 타입 정의
-interface Product{
-    id: number;
-    name: string;
-    price: number;
-}
+import type { Product } from "../context/CartContext"
 
 // products 배열에 상품 정보를 정의
 const products: Product[] = [
@@ -22,6 +17,7 @@ const ProductList = () => {
                 {products.map(product => (
                     <li key={product.id}>
                         {product.name} - {product.price.toLocaleString()}원
+                        <button>담기</button>
                     </li>
                 ))}
             </ul>
