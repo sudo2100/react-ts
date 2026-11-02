@@ -13,6 +13,8 @@ import Posts from './posts/Posts';
 import PostDetail from './posts/PostDetail';
 import AddPost from './posts/AddPost';
 import Bank from './reducer/Bank';
+import ProductList from './products/ProductList';
+import Header from './layouts/Header';
 
 function App() {
 
@@ -24,16 +26,12 @@ function App() {
   return (
     <>
       <section className="app">
-        <Bank />
-        {/* <BrowserRouter>
+        <BrowserRouter>
+        <Header />
           <Routes>
-            <Route path='/' element={<Posts />} />
-            <Route path='/posts/:id' element={<PostDetail />} />
-            <Route path='/posts/add' element={<AddPost />} />
+            <Route path='/' element={<ProductList />} />
           </Routes>
-        </BrowserRouter> */}
-        {/* <Memo /> */}
-        {/* <Todos /> */}
+        </BrowserRouter>
 
         {/* <Card title="공지사항">
           <p>내일은 TypeScript 시험이 있습니다.</p>
