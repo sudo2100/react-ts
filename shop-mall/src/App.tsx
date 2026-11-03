@@ -3,6 +3,7 @@ import './App.css'
 import Header from './layouts/Header'
 import ProductList from './products/ProductList'
 import ProductProvider from './context/ProductProvider'
+import ProductDetail from './products/ProductDetail'
 
 function App() {
 
@@ -13,7 +14,8 @@ function App() {
         <Header />
         <main>
           <Routes>
-            <Route path="/" element={<ProductList />} />
+            <Route path='/' element={<ProductList />} />
+            <Route path='/product/:id' element={<ProductDetail />} />
           </Routes>
         </main>
       </BrowserRouter>
