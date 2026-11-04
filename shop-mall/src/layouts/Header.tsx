@@ -10,6 +10,7 @@ const Header = () => {
             <nav>
                 <Link to='/'>상품 목록</Link>
                 <Link to='/product/new'>상품 등록</Link>
+                <Link to='/cart'>장바구니</Link>
             </nav>
         </header>
     )

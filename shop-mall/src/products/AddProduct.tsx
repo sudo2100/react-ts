@@ -14,6 +14,7 @@ const initialForm: ProductForm = {
 const AddProduct = () => {
     const [form, setForm] = useState<ProductForm>(initialForm);
     const { addProduct } = useProduct();
+    const [error, setError] = useState<string | null>(null);
     const navigate = useNavigate();
 
     // 폼에 입력된 데이터 가져오기
@@ -29,6 +30,20 @@ const AddProduct = () => {
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
+        // 유효성 검사
+        if(!pName.trim()){
+            setError("상품명을 입력해주세요")
+            return;
+        }
+        if(!price || price <= 0){
+            setError("가격을 올바르게 입력해주세요")
+            return;
+        }
+        if(!description.trim()){
+            setError("설명을 입력해주세요")
+            return;
+        }
+
         // 상품 추가 함수 호출
         addProduct({
             pName,
@@ -38,6 +53,12 @@ const AddProduct = () => {
         });
         alert("상품이 등록되었습니다.");
         navigate('/');  //상품 목록으로 이동
+    }
+
+    // 취소 버튼 - 폼 초기화
+    const handleCancel = () => {
+        setForm(initialForm);
+        setError(null);
     }
 
     return(
@@ -52,6 +73,7 @@ const AddProduct = () => {
                         name="pName"
                         value={pName}
                         onChange={handleChange}
+                        placeholder="상품명을 입력해주세요"
                     />
                 </div>
                 <div>
@@ -85,11 +107,18 @@ const AddProduct = () => {
                         name="description"
                         value={description}
                         onChange={handleChange}
+                        placeholder="상품 설명을 입력해주세요"
+                        rows={4}
                     />
                 </div>
+                {error && 
+                    <p className="product-add_error">{error}</p>}
                 <div className="product-add_buttons">
                     <button type="submit">등록</button>
-                    <button>취소</button>
+                    <button 
+                        type="button"
+                        onClick={handleCancel}
+                    >취소</button>
                 </div>
             </form>
         </div>
