@@ -7,7 +7,10 @@ const Header = () => {
             <h1>
                 <Link to='/'>SPACE SHOP</Link>
             </h1>
-            <Link to='/'>상품 목록</Link>
+            <nav>
+                <Link to='/'>상품 목록</Link>
+                <Link to='/product/new'>상품 등록</Link>
+            </nav>
         </header>
     )
 }

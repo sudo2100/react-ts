@@ -4,6 +4,7 @@ import Header from './layouts/Header'
 import ProductList from './products/ProductList'
 import ProductProvider from './context/ProductProvider'
 import ProductDetail from './products/ProductDetail'
+import AddProduct from './products/AddProduct'
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
           <Routes>
             <Route path='/' element={<ProductList />} />
             <Route path='/product/:id' element={<ProductDetail />} />
+            <Route path='/product/new' element={<AddProduct />} />
           </Routes>
         </main>
       </BrowserRouter>
