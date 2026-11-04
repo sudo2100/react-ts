@@ -2,7 +2,7 @@ import { useCart } from "../context/CartContext";
 import { useProduct } from "../context/ProductContext";
 
 const Cart = () => {
-    const { cartItems } = useCart();
+    const { cartItems, totalQuantity, totalPrice } = useCart();
     const { products } = useProduct();
 
     return(
@@ -23,10 +23,23 @@ const Cart = () => {
                                         <span>{product?.category}</span>
                                         <span> {product?.pName}</span>
                                     </div>
+                                    {/* 상품 수량 */}
+                                    <div className="cart_quantity">
+                                        <span>{item.qty}</span>
+                                    </div>
+                                    {/* 상품 가격 계산 */}
+                                    <strong className="cart_subtotal">
+                                        {product ? (product.price * item.qty).toLocaleString() : 0}원
+                                    </strong>
                                 </li>
                             )
                         } )}
                     </ul>
+                    {/* 통계 요약 */}
+                    <div className="cart_summary">
+                        <span>총 {totalQuantity}개</span>
+                        <strong>{totalPrice.toLocaleString()}원</strong>
+                    </div>
                 </>
             )}
         </section>
