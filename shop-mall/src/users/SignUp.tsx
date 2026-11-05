@@ -35,6 +35,22 @@ const SignUp = () => {
             setError("아이디를 입력하세요");
             return;
         }
+        if(!password){
+            setError("비밀번호를 입력하세요");
+            return;
+        }
+        if(password !== passwordConfirm){
+            setError("비밀번호가 일치하지 않습니다.");
+            return;
+        }
+        if(!name.trim()){
+            setError("이름을 입력하세요");
+            return;
+        }
+        if(!email){
+            setError("이메일 입력하세요");
+            return;
+        }
 
         // 회원 가입 함수 호출
         signup({
@@ -107,6 +123,8 @@ const SignUp = () => {
                         placeholder="이메일을 입력해주세요"
                     />
                 </div>
+                {error && 
+                    <p className="sign-up_error">{error}</p>}
                 <button type="submit">등록</button>
             </form>
         </div>

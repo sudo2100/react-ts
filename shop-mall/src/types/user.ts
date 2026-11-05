@@ -16,15 +16,22 @@ export type NewUser = Omit<User, "id">
 
 // 회원 가입 폼 타입(DTO-화면으로 전달되는 데이터)  
 /*export interface SignUpForm{
-    username: string,
-    password: string,
+    username: string;
+    password: string;
     passwordConfirm: string;
-    name: string,
-    email: string,
+    name: string;
+    email: string;
 }*/
 
+// 회원 가입 폼 상속
 export interface SignUpForm extends Omit<User, "id" | "role">{
     passwordConfirm: string;  //비밀번호 확인
+}
+
+// 로그인 폼 타입 정의
+export interface LoginForm{
+    username: string;
+    password: string;
 }
 
 
