@@ -15,6 +15,7 @@ const Header = () => {
                 <Link to='/'>상품 목록</Link>
                 <Link to='/product/new'>상품 등록</Link>
                 <Link to='/cart'>장바구니({totalQuantity})</Link>
+                <Link to='/signup'>회원 가입</Link>
             </nav>
         </header>
     )

@@ -80,6 +80,7 @@ const Cart = () => {
                         >전체 비우기</button>
                         <Link to='/' className="cart_link">쇼핑 계속하기</Link>
                     </div>    
+                    <button className="cart_order">주문하기</button>
                 </>
             )}
         </section>
